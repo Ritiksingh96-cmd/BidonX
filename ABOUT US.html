@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BIDON - Professional Online Bidding Platform</title>
+    <style>
+        /* Professional Color Scheme */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #1abc9c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --background: #f5f7fa;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 1.5rem 0 1rem;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 1rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .leader-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .leader-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+        }
+
+        .leader-position {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+        }
+
+        /* Advantages */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #16a085;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4);
+        }
+
+        /* List styling */
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .leadership {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .leader-photo {
+                margin-bottom: 1.5rem;
+                width: 150px;
+                height: 150px;
+            }
+
+            .process-steps, .advantages {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <h1>About BIDON</h1>
+        
+        <h2>Our Vision</h2>
+        <p>BIDON is revolutionizing e-commerce through transparent, competitive online bidding. We bridge buyers and sellers in a dynamic marketplace where value meets opportunity, creating a fair and efficient digital auction environment for all participants.</p>
+        
+        <div class="leadership">
+            <img src="founder.logo.jpeg.jpg" alt="Ritik Singh, CEO of BIDON" class="leader-photo">
+            <div>
+                <h3>Leadership</h3>
+                <p class="leader-title">Ritik Singh (R.K. Industry)</p>
+                <p class="leader-position">Founder & Chief Executive Officer</p>
+                <p>Under Mr. Singh's visionary leadership, BIDON has rapidly evolved from a startup concept to a premier online bidding platform serving thousands of satisfied users nationwide. With extensive expertise in digital marketplaces and a passion for fair commerce practices, he has built BIDON on principles of transparency, security, and user empowerment. His strategic direction continues to drive innovation in the online auction space.</p>
+            </div>
+        </div>
+        
+        <h2>How Our Platform Works</h2>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>For Sellers</h3>
+                <ul>
+                    <li>List products with comprehensive descriptions and high-quality images</li>
+                    <li>Set minimum bids or confidential reserve prices</li>
+                    <li>Monitor real-time bidding activity with analytics dashboard</li>
+                    <li>Secure payment processing upon successful auction completion</li>
+                    <li>Automated shipping label generation for sold items</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>For Buyers</h3>
+                <ul>
+                    <li>Browse verified product listings with detailed condition reports</li>
+                    <li>Place competitive bids with confidence using our proxy bidding system</li>
+                    <li>Receive instant notifications when you're outbid</li>
+                    <li>Complete purchases through our secure checkout process</li>
+                    <li>Access buyer protection programs for peace of mind</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Our Value Add</h3>
+                <ul>
+                    <li>Escrow protection ensuring safe transactions for both parties</li>
+                    <li>Verified user profiles with reputation scoring</li>
+                    <li>AI-powered fraud detection and prevention systems</li>
+                    <li>24/7 dedicated customer support team</li>
+                    <li>Mobile app for bidding on-the-go</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Why Choose BIDON?</h2>
+        <div class="advantages">
+            <div class="advantage-card">
+                <h3>Market Reach</h3>
+                <p>Access to our growing community of thousands of active bidders and collectors nationwide, increasing your item's visibility and final sale price.</p>
+            </div>
+            <div class="advantage-card">
+                <h3>Fair Pricing</h3>
+                <p>True market value determined through competitive, transparent bidding - no hidden fees or artificial price inflation.</p>
+            </div>
+            <div class="advantage-card">
+                <h3>Security</h3>
+                <p>Enterprise-grade protection including SSL encryption, two-factor authentication, and financial safeguards for all transactions.</p>
+            </div>        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/CONTACT.html" class="btn">Contact Our Team</a>
+        </div>
+    </section>
+</body>
+</html>
